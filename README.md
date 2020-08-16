@@ -187,10 +187,4 @@ Windows 宿主机 C:/Windows/System32/drivers/etc/hosts 文件中添加域名映
 ### 删除基础镜像(根据自己需求哈，请勿模仿)
 docker images
 
-docker rmi -f 
-php                        7.3-fpm-alpine      5771742726c9        9 days ago          75.1MB
-mysql                      5.7                 718a6da099d8        11 days ago         448MB
-mongo                      4.2.8-bionic        dee5b549543c        3 weeks ago         388MB
-redis                      5.0-alpine          893bb508e38f        3 weeks ago         30.3MB
-nginx                      1.18-alpine         8c1bfa967ebf        5 weeks ago         21.5MB
-memcached                  1.6.6-alpine        6c8afc725f63        2 months ago        9.25MB
+docker rmi -f php:7.3-fpm-alpine  mysql:5.7 mongo:4.2.8-bionic redis:5.0-alpine nginx:1.18-alpine memcached:1.6.6-alpine
