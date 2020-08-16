@@ -94,7 +94,7 @@ Docker LNMP 默认将同级目录映射到 php-fpm 容器的工作目录，在�
 $ git clone https://github.com/wenshengr/docker-lnmp.git
 ```
 
-进入 docker-lnmp 目录，找到配置文件 `.env`
+进入 docker-lnmp 目录，cp env .env文件， 则`.env`文件为相关配置
 
 ```
 cd docker-lnmp
