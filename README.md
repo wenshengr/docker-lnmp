@@ -6,8 +6,7 @@ docker-lnmp 是基于 docker-compose 开发的运行在 Docker 上的 LNMP 开�
 
 
 ### 包含镜像
-********************************************************
-* 
+```
 * docker-lnmp 包含以下镜像，每种镜像的版本都配置在.env文件中：
 * 
 * LNMP: nginx-1.18 + php-7.3 + mysql-5.7
@@ -21,10 +20,8 @@ docker-lnmp 是基于 docker-compose 开发的运行在 Docker 上的 LNMP 开�
 * REDIS_VERSION: redis 版本
 * MONGO_VERSION: mongodb 版本
 * MEMCACHE_VERSION: memcache 版本
-* 
-********************************************************
+```
 
-其中：
 #### Nginx 基于 nginx:1.18-alpine
 
 #### PHP基于 php:7.3-fpm-alpine, 其中包含以下扩展
