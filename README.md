@@ -87,8 +87,9 @@ zlib
 #### Memcache 是 memcached:1.6.6-alpine 版本
 
 
-## 下载使用
+### 下载并使用
 
+#### 1.下载
 Docker LNMP 默认将同级目录映射到 php-fpm 容器的工作目录，在项目的同级目录下载 Docker LNMP：
 ```
 $ git clone https://github.com/wenshengr/docker-lnmp.git
@@ -103,7 +104,7 @@ cd docker-lnmp
 
 日志文件根目录： `.env` 文件中 `LOG_PATH`
 
-### 启动服务
+#### 2.使用 - 启动服务
 
 在 docker-lnmp 目录，启动服务，命令如下：
 ``` 
@@ -121,7 +122,7 @@ nginx 默认会启动 php-fpm 和 mysql 服务，如需启动其它服务请手�
 启动成功后，在 docker-lnmp 的www目录新建 phpinfo.php 文件，浏览器访问 `http://localhost:380/phpinfo.php`，则可看到 phpinfo() 相关信息。
 
 
-### 关闭服务
+#### 3.使用 - 关闭服务
 
 在 docker-lnmp 目录，关闭服务，命令如下：
 ``` 
@@ -129,7 +130,7 @@ nginx 默认会启动 php-fpm 和 mysql 服务，如需启动其它服务请手�
 ```
 
 
-### 重新构建服务
+#### 4.使用 - 重新构建服务
 
 如修改 dockerfile 文件，需重新构建服务，如重新构建 nginx 命令如下：
 ```
@@ -139,23 +140,12 @@ nginx 默认会启动 php-fpm 和 mysql 服务，如需启动其它服务请手�
 建议先关闭服务，构建完成再重启服务。
 
 
-### 虚拟主机
+#### 5.使用 - 虚拟主机
 
 Nginx 虚拟主机相关配置请参考如下文档，配置完需重启服务，完整配置请参考 `nignx/conf.d/default.conf` 文件：
 
-# Nginx 配置虚拟主机
 
-
-## 添加域名映射
-
-Mac、Ubuntu等宿主机 /etc/hosts 文件中添加域名映射，配置如下：
-Windows 宿主机 C:/Windows/System32/drivers/etc/hosts 文件中添加域名映射，配置如下：
-```
-127.0.0.1 test.local
-```
-
-
-## 添加 server 配置
+##### 1. Nginx 配置虚拟主机 - 添加 server 配置
 
 目录 docker-lnmp/nginx/conf.d 下新增 default.conf 文件，配置如下：
 ```
@@ -182,7 +172,15 @@ server {
 }
 ```
 
+##### 2. 添加域名映射
 
-## 3. 重启服务
+Mac、Ubuntu等宿主机 /etc/hosts 文件中添加域名映射，配置如下：
+Windows 宿主机 C:/Windows/System32/drivers/etc/hosts 文件中添加域名映射，配置如下：
+```
+127.0.0.1 test.local
+```
+
+##### 3. 重启服务
 
 参照基本命令。
+
