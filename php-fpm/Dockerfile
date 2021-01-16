@@ -7,6 +7,8 @@ LABEL maintainer="wenshengr <wenshengr@163.com>"
 ## Change Aliyun Mirrors:
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 
+RUN apk update
+
 ## Install System Extensions:
 RUN apk add --no-cache --virtual .build-deps \
         autoconf \
@@ -66,6 +68,25 @@ RUN if [ ${INSTALL_OPCACHE} = true ]; then \
 
 
 # PECL Install PHP Extensions
+
+# PECL Extensions msgpack:
+ARG INSTALL_MSGPACK=true
+ARG INSTALL_MSGPACK_VERSION
+RUN if [ ${INSTALL_MSGPACK} = true ]; then \
+    pecl install msgpack-${INSTALL_MSGPACK_VERSION} \
+    && rm -rf /tmp/pear \
+    && docker-php-ext-enable msgpack \
+;fi
+
+
+# PECL Extensions igbinary:
+ARG INSTALL_IGBINARY=true
+ARG INSTALL_IGBINARY_VERSION
+RUN if [ ${INSTALL_IGBINARY} = true ]; then \
+    pecl install igbinary-${INSTALL_IGBINARY_VERSION} \
+    && rm -rf /tmp/pear \
+    && docker-php-ext-enable igbinary \
+;fi
 
 # PECL Extensions reids:
 ARG INSTALL_REDIS=true

@@ -7,4 +7,4 @@ LABEL maintainer="wenshengr <wenshengr@163.com>"
 VOLUME /var/www
 WORKDIR /var/www
 
-EXPOSE 80 443
+EXPOSE 80

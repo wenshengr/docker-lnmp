@@ -1,1 +1,0 @@
-2020/08/16 04:20:37 [error] 28#28: *1 open() "/var/www/favicon.ico" failed (2: No such file or directory), client: 172.21.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:380", referrer: "http://localhost:380/"
